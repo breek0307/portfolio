@@ -34,14 +34,14 @@ const SkillsRow = () => {
       {/* Scroll Buttons */}
       <button
         onClick={() => scroll('left')}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-40 bg-black/60 p-2 h-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center hover:bg-black/80"
+        className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-40 bg-black/60 p-2 h-full opacity-0 group-hover:opacity-100 transition-opacity items-center justify-center hover:bg-black/80"
       >
         <ChevronLeft className="w-8 h-8 text-white" />
       </button>
 
       <button
         onClick={() => scroll('right')}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-40 bg-black/60 p-2 h-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center hover:bg-black/80"
+        className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-40 bg-black/60 p-2 h-full opacity-0 group-hover:opacity-100 transition-opacity items-center justify-center hover:bg-black/80"
       >
         <ChevronRight className="w-8 h-8 text-white" />
       </button>

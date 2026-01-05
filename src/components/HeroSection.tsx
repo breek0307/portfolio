@@ -14,14 +14,18 @@ const HeroSection = () => {
   return (
     <section className="hero-section">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 flex justify-end items-end">
+      <div className="absolute inset-0 z-0 flex justify-end items-end md:items-end">
         <img
           src={HERO_IMAGE}
           alt="Vedant - Full Stack Developer"
-          className="h-[90vh] w-auto object-contain object-right-bottom animate-slow-zoom"
-          style={{ 
-            maskImage: "linear-gradient(to right, transparent 0%, black 40%, black 100%)",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 40%, black 100%)",
+          className="h-[65vh] w-full object-cover object-top md:h-[90vh] md:w-auto md:object-contain md:object-right-bottom animate-slow-zoom"
+          style={{
+            maskImage: window.innerWidth < 768
+              ? "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)"
+              : "linear-gradient(to right, transparent 0%, black 40%, black 100%)",
+            WebkitMaskImage: window.innerWidth < 768
+              ? "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)"
+              : "linear-gradient(to right, transparent 0%, black 40%, black 100%)",
             filter: "brightness(0.9) contrast(1.1)"
           }}
         />
@@ -40,7 +44,7 @@ const HeroSection = () => {
         </div>
 
         {/* Title */}
-        <h1 className="hero-title animate-fade-in-up opacity-0 animate-delay-1">
+        <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl animate-fade-in-up opacity-0 animate-delay-1">
           VEDANT
         </h1>
 
@@ -55,8 +59,8 @@ const HeroSection = () => {
 
         {/* Description - Recruiter-Focused */}
         <p className="hero-description animate-fade-in-up opacity-0 animate-delay-3">
-          Full Stack Developer who ships production-ready applications. 
-          Specializing in React, Node.js, and scalable architectures. 
+          Full Stack Developer who ships production-ready applications.
+          Specializing in React, Node.js, and scalable architectures.
           I turn complex requirements into elegant, maintainable code that users love.
         </p>
 

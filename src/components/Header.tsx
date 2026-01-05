@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { ChevronDown, Github, Linkedin, Instagram, LogOut } from "lucide-react";
+import { ChevronDown, Github, Linkedin, Instagram, LogOut, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,11 +25,19 @@ const Header = () => {
   return (
     <header className={`header-nav flex items-center justify-between ${scrolled ? "scrolled" : ""}`}>
       <div className="flex items-center gap-8">
-        <div
-          className="logo-text cursor-pointer hover:scale-105 transition-transform"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          VEDANT
+        <div className="flex items-center gap-4">
+          <button
+            className="md:hidden text-white"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X /> : <Menu />}
+          </button>
+          <div
+            className="logo-text cursor-pointer hover:scale-105 transition-transform"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            VEDANT
+          </div>
         </div>
         <nav className="hidden md:flex items-center gap-6">
           <button
@@ -45,6 +54,50 @@ const Header = () => {
           </button>
         </nav>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 top-[60px] bg-black/95 z-40 md:hidden animate-fade-in-up">
+          <div className="flex flex-col p-8 gap-8">
+            <button
+              onClick={() => {
+                scrollToSection('projects');
+                setMobileMenuOpen(false);
+              }}
+              className="text-2xl font-bold text-gray-300 hover:text-white text-left"
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection('skills');
+                setMobileMenuOpen(false);
+              }}
+              className="text-2xl font-bold text-gray-300 hover:text-white text-left"
+            >
+              Skills
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection('experience');
+                setMobileMenuOpen(false);
+              }}
+              className="text-2xl font-bold text-gray-300 hover:text-white text-left"
+            >
+              Experience
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection('contact');
+                setMobileMenuOpen(false);
+              }}
+              className="text-2xl font-bold text-gray-300 hover:text-white text-left"
+            >
+              Contact
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="flex items-center gap-6 relative">
         <div
