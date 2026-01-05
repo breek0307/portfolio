@@ -33,8 +33,8 @@ const Index = () => {
           <main>
             <HeroSection />
             <div className="relative z-10 -mt-20">
-              <SkillsRow />
               <ProjectsRow />
+              <SkillsRow />
               <ExperienceRow />
               <ContactSection />
             </div>

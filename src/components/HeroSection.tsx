@@ -14,15 +14,15 @@ const HeroSection = () => {
   return (
     <section className="hero-section">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 flex justify-end items-end">
         <img
           src={HERO_IMAGE}
           alt="Vedant - Full Stack Developer"
-          className="w-full h-full object-cover object-top animate-slow-zoom"
+          className="h-[90vh] w-auto object-contain object-right-bottom animate-slow-zoom"
           style={{ 
-            maskImage: "linear-gradient(to left, black 0%, black 50%, transparent 85%)",
-            WebkitMaskImage: "linear-gradient(to left, black 0%, black 50%, transparent 85%)",
-            opacity: 0.8
+            maskImage: "linear-gradient(to right, transparent 0%, black 40%, black 100%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 40%, black 100%)",
+            filter: "brightness(0.9) contrast(1.1)"
           }}
         />
       </div>
