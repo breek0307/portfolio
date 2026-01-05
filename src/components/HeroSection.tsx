@@ -18,7 +18,7 @@ const HeroSection = () => {
         <img
           src={HERO_IMAGE}
           alt="Vedant - Full Stack Developer"
-          className="h-[65vh] w-full object-cover object-top md:h-[90vh] md:w-auto md:object-contain md:object-right-bottom animate-slow-zoom"
+          className="h-[85vh] w-full object-cover object-top md:h-[90vh] md:w-auto md:object-contain md:object-right-bottom animate-slow-zoom"
           style={{
             maskImage: window.innerWidth < 768
               ? "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)"
@@ -26,7 +26,7 @@ const HeroSection = () => {
             WebkitMaskImage: window.innerWidth < 768
               ? "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)"
               : "linear-gradient(to right, transparent 0%, black 40%, black 100%)",
-            filter: "brightness(0.9) contrast(1.1)"
+            filter: "contrast(1.1)"
           }}
         />
       </div>
