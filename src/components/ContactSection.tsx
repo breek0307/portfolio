@@ -79,8 +79,8 @@ const ContactCard = ({ contact }: { contact: typeof contacts[0] }) => {
     >
       <div
         className={`absolute top-0 left-0 w-full bg-[#141414] rounded-md overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] border border-white/5 ${isHovered
-            ? "z-50 scale-125 -translate-y-[20%] shadow-[0_20px_50px_rgba(220,38,38,0.3)] border-red-600/30"
-            : "z-10 scale-100 shadow-none hover:border-white/20"
+          ? "z-50 scale-125 -translate-y-[20%] shadow-[0_20px_50px_rgba(220,38,38,0.3)] border-red-600/30"
+          : "z-10 scale-100 shadow-none hover:border-white/20"
           }`}
       >
         {/* Icon / Cover Section - Fixed Height to prevent jumpiness */}
@@ -132,7 +132,7 @@ const ContactSection = () => {
       <h2 className="row-title mb-4 px-4 md:px-0">Connect with Vedant</h2>
 
       {/* Netflix-style horizontal row with extra padding for hover effects */}
-      <div className="row-scroller flex gap-2 overflow-x-auto px-[4%] pt-12 pb-40 -mx-[4%] -mt-12 scrollbar-hide">
+      <div className="row-scroller flex gap-2 overflow-x-auto px-[4%] pt-32 pb-40 -mx-[4%] -mt-24 scrollbar-hide">
         {contacts.map((contact) => (
           <ContactCard key={contact.platform} contact={contact} />
         ))}
