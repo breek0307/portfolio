@@ -67,43 +67,33 @@ const ContactCard = ({ contact }: { contact: typeof contacts[0] }) => {
       href={contact.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative w-[200px] h-[300px] flex-shrink-0 transition-all duration-300 md:w-[220px] md:h-[330px] cursor-pointer group"
+      className="relative w-[160px] h-[160px] flex-shrink-0 transition-all duration-300 md:w-[180px] md:h-[180px] cursor-pointer group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`absolute inset-0 bg-[#141414] rounded-md overflow-hidden transition-all duration-300 ease-in-out border border-transparent ${isHovered
+        className={`absolute inset-0 bg-black rounded-md overflow-hidden transition-all duration-300 ease-in-out border border-transparent ${isHovered
             ? "z-50 scale-110 shadow-[0_0_20px_rgba(229,9,20,0.4)] border-red-600/50"
             : "z-10 scale-100 border-white/10"
           }`}
       >
         {/* Background Gradient / Poster Style */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${contact.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />
+        {/* <div className={`absolute inset-0 bg-gradient-to-br ${contact.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-500`} /> */}
 
         {/* Large Centered Icon (Poster Art) */}
-        <div className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${isHovered ? "-translate-y-8 scale-75 opacity-20" : "scale-100 opacity-100"}`}>
-          <Icon className="w-20 h-20 text-white drop-shadow-2xl" />
+        <div className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${isHovered ? "-translate-y-4 scale-75 opacity-20" : "scale-100 opacity-100"}`}>
+          <Icon className="w-16 h-16 text-white drop-shadow-2xl" />
         </div>
 
         {/* Hover Overlay Content */}
-        <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent flex flex-col justify-end p-5 transition-all duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`}>
+        <div className={`absolute inset-0 bg-black/90 flex flex-col justify-center items-center p-4 transition-all duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`}>
 
-          <div className="transform translate-y-0 transition-transform duration-300">
-            <h3 className="text-white font-bold text-xl mb-1 flex items-center gap-2">
+          <div className="text-center transform translate-y-0 transition-transform duration-300">
+            <h3 className="text-white font-bold text-lg mb-2">
               {contact.platform}
             </h3>
 
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-green-400 text-xs font-bold">98% Match</span>
-              <span className="text-gray-400 text-[10px] border border-gray-500 px-1 rounded">HD</span>
-            </div>
-
-            <p className="text-gray-300 text-xs mb-4 line-clamp-2">
-              {contact.purpose}
-            </p>
-
-            <button className="w-full py-2 bg-white text-black font-bold text-sm rounded flex items-center justify-center gap-2 hover:bg-red-600 hover:text-white transition-colors">
-              <Icon className="w-4 h-4" />
+            <button className="px-4 py-2 bg-white text-black font-bold text-xs rounded hover:bg-red-600 hover:text-white transition-colors">
               {contact.cta}
             </button>
           </div>
