@@ -1,59 +1,68 @@
-import { Github, Linkedin, Mail, MessageCircle, Send, Instagram } from "lucide-react";
+import { Github, Linkedin, Mail, MessageCircle, Send, Instagram, Twitter } from "lucide-react";
 import { useState } from "react";
 
 const contacts = [
   {
     platform: "LinkedIn",
-    purpose: "Professional profile • Connect",
+    purpose: "Vedant Srivastava",
     cta: "Connect",
     icon: Linkedin,
     color: "bg-[#0077b5]",
-    link: "https://linkedin.com",
+    link: "https://www.linkedin.com/in/vedant-srivastava-b299b9364",
     gradient: "from-blue-600 to-blue-900"
   },
   {
+    platform: "Twitter/X",
+    purpose: "@breek0307",
+    cta: "Follow",
+    icon: Twitter,
+    color: "bg-[#000000]",
+    link: "https://x.com/breek0307",
+    gradient: "from-gray-700 to-gray-900"
+  },
+  {
     platform: "Gmail",
-    purpose: "Email me directly • Fast reply",
+    purpose: "vedaaant0307@gmail.com",
     cta: "Send Email",
     icon: Mail,
     color: "bg-[#EA4335]",
-    link: "mailto:hello@vedant.dev",
+    link: "mailto:vedaaant0307@gmail.com",
     gradient: "from-red-600 to-red-900"
   },
   {
     platform: "Instagram",
-    purpose: "Creative updates",
+    purpose: "_.vedaant_",
     cta: "Follow",
     icon: Instagram,
     color: "bg-[#E4405F]",
-    link: "https://instagram.com",
+    link: "https://instagram.com/_.vedaant_",
     gradient: "from-pink-600 to-pink-900"
   },
   {
     platform: "WhatsApp",
-    purpose: "Quick conversation",
+    purpose: "+91 73804 16747",
     cta: "Chat",
     icon: MessageCircle,
     color: "bg-[#25D366]",
-    link: "https://whatsapp.com",
+    link: "https://wa.me/917380416747",
     gradient: "from-green-600 to-green-900"
   },
   {
     platform: "GitHub",
-    purpose: "Projects & source code",
+    purpose: "breek0307",
     cta: "View Code",
     icon: Github,
     color: "bg-[#333]",
-    link: "https://github.com",
+    link: "https://github.com/breek0307",
     gradient: "from-gray-600 to-gray-900"
   },
   {
     platform: "Telegram",
-    purpose: "Direct messages",
+    purpose: "+91 73804 16747",
     cta: "Message",
     icon: Send,
     color: "bg-[#0088cc]",
-    link: "https://telegram.org",
+    link: "https://t.me/+917380416747",
     gradient: "from-sky-600 to-sky-900"
   }
 ];
@@ -73,8 +82,8 @@ const ContactCard = ({ contact }: { contact: typeof contacts[0] }) => {
     >
       <div
         className={`absolute inset-0 bg-black rounded-md overflow-hidden transition-all duration-300 ease-in-out border border-transparent ${isHovered
-            ? "z-50 scale-110 shadow-[0_0_20px_rgba(229,9,20,0.4)] border-red-600/50"
-            : "z-10 scale-100 border-white/10"
+          ? "z-50 scale-110 shadow-[0_0_20px_rgba(229,9,20,0.4)] border-red-600/50"
+          : "z-10 scale-100 border-white/10"
           }`}
       >
         {/* Background Gradient / Poster Style */}

@@ -120,7 +120,7 @@ const Header = () => {
             </div>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/vedant-srivastava-b299b9364"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 flex items-center gap-3 transition-colors"
@@ -129,7 +129,7 @@ const Header = () => {
               LinkedIn
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/breek0307"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 flex items-center gap-3 transition-colors"
@@ -138,7 +138,7 @@ const Header = () => {
               GitHub
             </a>
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/_.vedaant_"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 flex items-center gap-3 transition-colors"
