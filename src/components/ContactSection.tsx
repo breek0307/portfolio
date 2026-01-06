@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MessageCircle, Send, Instagram, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, MessageCircle, Send, Instagram, Twitter, ArrowUp } from "lucide-react";
 import { useState } from "react";
 
 const contacts = [
@@ -72,43 +72,57 @@ const ContactCard = ({ contact }: { contact: typeof contacts[0] }) => {
   const Icon = contact.icon;
 
   return (
-    <a
-      href={contact.link}
-      target="_blank"
-      rel="noopener noreferrer"
+    <div
       className="relative w-[160px] h-[160px] flex-shrink-0 transition-all duration-300 md:w-[180px] md:h-[180px] cursor-pointer group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`absolute inset-0 bg-black rounded-md overflow-hidden transition-all duration-300 ease-in-out border border-transparent ${isHovered
-          ? "z-50 scale-110 shadow-[0_0_20px_rgba(229,9,20,0.4)] border-red-600/50"
-          : "z-10 scale-100 border-white/10"
+        className={`absolute top-0 left-0 w-full bg-[#141414] rounded-md overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] border border-white/5 ${isHovered
+            ? "z-50 scale-125 -translate-y-[20%] shadow-[0_20px_50px_rgba(220,38,38,0.3)] border-red-600/30"
+            : "z-10 scale-100 shadow-none hover:border-white/20"
           }`}
       >
-        {/* Background Gradient / Poster Style */}
-        {/* <div className={`absolute inset-0 bg-gradient-to-br ${contact.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-500`} /> */}
-
-        {/* Large Centered Icon (Poster Art) */}
-        <div className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${isHovered ? "-translate-y-4 scale-75 opacity-20" : "scale-100 opacity-100"}`}>
-          <Icon className="w-16 h-16 text-white drop-shadow-2xl" />
+        {/* Icon / Cover Section - Fixed Height to prevent jumpiness */}
+        <div className={`w-full h-[160px] md:h-[180px] flex items-center justify-center transition-all duration-500 ${isHovered ? "bg-black/80" : "bg-transparent"}`}>
+          <Icon
+            className={`text-white transition-all duration-500 drop-shadow-lg ${isHovered ? "w-8 h-8 -translate-y-4" : "w-16 h-16 scale-100"
+              }`}
+          />
         </div>
 
-        {/* Hover Overlay Content */}
-        <div className={`absolute inset-0 bg-black/90 flex flex-col justify-center items-center p-4 transition-all duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`}>
-
-          <div className="text-center transform translate-y-0 transition-transform duration-300">
-            <h3 className="text-white font-bold text-lg mb-2">
-              {contact.platform}
-            </h3>
-
-            <button className="px-4 py-2 bg-white text-black font-bold text-xs rounded hover:bg-red-600 hover:text-white transition-colors">
-              {contact.cta}
-            </button>
+        {/* Revealed Info Section - Smooth Slide Down */}
+        <div
+          className={`bg-[#181818] w-full transition-all duration-500 ease-in-out overflow-hidden ${isHovered ? "max-h-[160px] opacity-100 py-3 px-3" : "max-h-0 opacity-0 py-0 px-3"
+            }`}
+        >
+          {/* Action Row */}
+          <div className="flex items-center justify-between mb-2">
+            <a
+              href={contact.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 bg-white text-black text-[10px] font-bold uppercase rounded hover:bg-red-600 hover:text-white transition-colors flex items-center gap-1 w-full justify-center"
+            >
+              <span className="truncate">{contact.cta}</span>
+            </a>
           </div>
+
+          {/* Metadata */}
+          <div className="flex items-center gap-2 text-[10px] text-green-400 font-semibold mb-1.5">
+            <span>98% Match</span>
+            <span className="border border-gray-500 px-1 text-gray-400 text-[8px] rounded-[2px]">HD</span>
+            <span className="text-[8px] text-gray-500 border border-gray-600 px-1 rounded-[2px]">5.1</span>
+          </div>
+
+          <h3 className="text-white font-bold text-xs mb-0.5 truncate">{contact.platform}</h3>
+
+          <p className="text-[10px] text-gray-400 line-clamp-1 font-medium">
+            {contact.purpose}
+          </p>
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 
@@ -117,8 +131,8 @@ const ContactSection = () => {
     <section id="contact" className="content-section py-12 mb-20">
       <h2 className="row-title mb-4 px-4 md:px-0">Connect with Vedant</h2>
 
-      {/* Netflix-style horizontal row */}
-      <div className="row-scroller flex gap-2 overflow-x-auto px-[4%] py-12 -mx-[4%] scrollbar-hide pb-20">
+      {/* Netflix-style horizontal row with extra padding for hover effects */}
+      <div className="row-scroller flex gap-2 overflow-x-auto px-[4%] pt-12 pb-40 -mx-[4%] -mt-12 scrollbar-hide">
         {contacts.map((contact) => (
           <ContactCard key={contact.platform} contact={contact} />
         ))}
