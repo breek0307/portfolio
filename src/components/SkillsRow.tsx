@@ -28,7 +28,7 @@ const SkillsRow = () => {
   };
 
   return (
-    <section id="skills" className="content-section relative group">
+    <section id="skills" className="content-section py-4 relative group">
       <h2 className="row-title mb-6">Trending Skills</h2>
 
       {/* Scroll Buttons */}

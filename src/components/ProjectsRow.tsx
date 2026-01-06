@@ -45,9 +45,9 @@ const projects = [
 
 const ProjectsRow = () => {
   return (
-    <section id="projects" className="content-section py-12">
+    <section id="projects" className="content-section py-0">
       <h2 className="row-title mb-4 px-4 md:px-0">Featured Projects</h2>
-      <div className="row-scroller flex gap-2 overflow-x-auto px-[4%] pt-32 pb-40 -mx-[4%] -mt-24 scrollbar-hide">
+      <div className="row-scroller flex gap-4 overflow-x-auto px-[4%] pt-32 pb-40 -mx-[4%] -mt-24 scrollbar-hide">
         {projects.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}

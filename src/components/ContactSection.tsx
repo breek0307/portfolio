@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MessageCircle, Send, Instagram, Twitter, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Mail, MessageCircle, Send, Instagram, Twitter } from "lucide-react";
 import { useState } from "react";
 
 const contacts = [
@@ -128,11 +128,11 @@ const ContactCard = ({ contact }: { contact: typeof contacts[0] }) => {
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="content-section py-12 mb-20">
+    <section id="contact" className="content-section py-0 mb-8">
       <h2 className="row-title mb-4 px-4 md:px-0">Connect with Vedant</h2>
 
       {/* Netflix-style horizontal row with extra padding for hover effects */}
-      <div className="row-scroller flex gap-2 overflow-x-auto px-[4%] pt-20 pb-40 -mx-[4%] -mt-8 scrollbar-hide">
+      <div className="row-scroller flex gap-5 overflow-x-auto px-[4%] pt-24 pb-40 -mx-[4%] -mt-4 scrollbar-hide">
         {contacts.map((contact) => (
           <ContactCard key={contact.platform} contact={contact} />
         ))}
