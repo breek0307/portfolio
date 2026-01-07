@@ -3,24 +3,6 @@ import { useState } from "react";
 
 const contacts = [
   {
-    platform: "LinkedIn",
-    purpose: "Vedant Srivastava",
-    cta: "Connect",
-    icon: Linkedin,
-    color: "bg-[#0077b5]",
-    link: "https://www.linkedin.com/in/vedant-srivastava-b299b9364",
-    gradient: "from-blue-600 to-blue-900"
-  },
-  {
-    platform: "Twitter/X",
-    purpose: "@breek0307",
-    cta: "Follow",
-    icon: Twitter,
-    color: "bg-[#000000]",
-    link: "https://x.com/breek0307",
-    gradient: "from-gray-700 to-gray-900"
-  },
-  {
     platform: "Gmail",
     purpose: "vedaaant0307@gmail.com",
     cta: "Send Email",
@@ -30,13 +12,31 @@ const contacts = [
     gradient: "from-red-600 to-red-900"
   },
   {
-    platform: "Instagram",
-    purpose: "_.vedaant_",
+    platform: "LinkedIn",
+    purpose: "Vedant Srivastava",
+    cta: "Connect",
+    icon: Linkedin,
+    color: "bg-[#0077b5]",
+    link: "https://www.linkedin.com/in/vedant-srivastava-b299b9364",
+    gradient: "from-blue-600 to-blue-900"
+  },
+  {
+    platform: "GitHub",
+    purpose: "breek0307",
+    cta: "View Code",
+    icon: Github,
+    color: "bg-[#333]",
+    link: "https://github.com/breek0307",
+    gradient: "from-gray-600 to-gray-900"
+  },
+  {
+    platform: "Twitter",
+    purpose: "@breek0307",
     cta: "Follow",
-    icon: Instagram,
-    color: "bg-[#E4405F]",
-    link: "https://instagram.com/_.vedaant_",
-    gradient: "from-pink-600 to-pink-900"
+    icon: Twitter,
+    color: "bg-[#000000]",
+    link: "https://x.com/breek0307",
+    gradient: "from-gray-700 to-gray-900"
   },
   {
     platform: "WhatsApp",
@@ -48,13 +48,13 @@ const contacts = [
     gradient: "from-green-600 to-green-900"
   },
   {
-    platform: "GitHub",
-    purpose: "breek0307",
-    cta: "View Code",
-    icon: Github,
-    color: "bg-[#333]",
-    link: "https://github.com/breek0307",
-    gradient: "from-gray-600 to-gray-900"
+    platform: "Instagram",
+    purpose: "_.vedaant_",
+    cta: "Follow",
+    icon: Instagram,
+    color: "bg-[#E4405F]",
+    link: "https://instagram.com/_.vedaant_",
+    gradient: "from-pink-600 to-pink-900"
   },
   {
     platform: "Telegram",
@@ -129,7 +129,7 @@ const ContactCard = ({ contact }: { contact: typeof contacts[0] }) => {
 const ContactSection = () => {
   return (
     <section id="contact" className="content-section py-0 mb-8">
-      <h2 className="row-title mb-4 px-4 md:px-0">Connect with Vedant</h2>
+      <h2 className="row-title mb-4 px-4 md:px-0">connect with vedant</h2>
 
       {/* Netflix-style horizontal row with extra padding for hover effects */}
       <div className="row-scroller flex gap-5 overflow-x-auto px-[4%] pt-24 pb-40 -mx-[4%] -mt-4 scrollbar-hide">
